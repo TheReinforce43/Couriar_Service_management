@@ -21,6 +21,6 @@ from django.urls import path,include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('user/',include('user.urls')),
-    path('courier/',include('courier.urls')),
+    path('package/',include('package.urls')),
          
 ]
