@@ -11,9 +11,15 @@ class PackageModel(models.Model):
     destination = models.CharField(max_length=100)
     weight = models.DecimalField(max_digits=5, decimal_places=2)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='Processing')
-    is_deleted = models.BooleanField(default=False)
+    is_deleted = models.BooleanField(default=False)  #this attribute is used for soft delete functionality
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return f"Package from {self.sender} to {self.receiver}"
+    
+
+
+    def soft_delete(self):
+        self.is_deleted = True
+        self.save()
