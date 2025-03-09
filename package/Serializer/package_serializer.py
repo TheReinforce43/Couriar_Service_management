@@ -11,7 +11,8 @@ class CreatePackageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PackageModel
-        fields = ('id', 'name', 'description', 'price', 'quantity', 'sender','receiver')
+        # fields = ('id', 'name', 'description', 'price', 'quantity', 'sender','receiver')
+        fields = '__all__'
 
 
 
@@ -23,4 +24,5 @@ class GetPackageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PackageModel
-        fields = ('id', 'name', 'description', 'price', 'quantity', 'sender', 'receiver')
+        # fields = ('id', 'name', 'description', 'price', 'quantity', 'sender', 'receiver')
+        fields = '__all__'
