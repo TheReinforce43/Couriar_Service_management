@@ -59,15 +59,9 @@ cp .env.example .env
 # Run migrations
 python manage.py migrate
 
-# Create superuser
-python manage.py createsuperuser
-
-# Start server
-python manage.py runserver
-
-
 
 ### Production Development
+```bash
 
 
 # Start server
