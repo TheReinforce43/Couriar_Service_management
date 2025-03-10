@@ -64,3 +64,13 @@ python manage.py createsuperuser
 
 # Start server
 python manage.py runserver
+
+
+
+### Local Development
+
+
+# Start server
+gunicorn courier_service_backend.wsgi:application
+
+
