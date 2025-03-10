@@ -60,9 +60,9 @@ cp .env.example .env
 python manage.py migrate
 
 
-### Production Development
+### Deployment
 
-
+```bash
 
 # Start server
 gunicorn courier_service_backend.wsgi:application
