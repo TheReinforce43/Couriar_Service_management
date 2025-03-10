@@ -61,7 +61,7 @@ python manage.py migrate
 
 
 ### Production Development
-```bash
+
 
 
 # Start server
