@@ -8,11 +8,7 @@ A modern courier service management system backend built with Django REST Framew
 - [Features](#features)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
-- [Deployment](#deployment)
-- [Usage](#usage)
 
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - **Core Functionality**
@@ -62,7 +58,7 @@ python manage.py migrate
 
 ### Deployment
 
-```bash
+
 
 # Start server
 gunicorn courier_service_backend.wsgi:application
