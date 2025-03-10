@@ -67,7 +67,7 @@ python manage.py runserver
 
 
 
-### Local Development
+### Production Development
 
 
 # Start server
