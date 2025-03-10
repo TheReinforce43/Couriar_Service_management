@@ -10,7 +10,7 @@ A modern courier service management system backend built with Django REST Framew
 - [Installation](#installation)
 - [Deployment](#deployment)
 - [Usage](#usage)
-- [API Documentation](#api-documentation)
+
 - [Contributing](#contributing)
 - [License](#license)
 
