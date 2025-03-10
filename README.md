@@ -1,80 +1,66 @@
+# Courier Service Management
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://couriar-service-management.onrender.com/)
 
-# Couriar Service Management
-
-Couriar_Service_management is a backend project for a courier service management system built with Python and Django. This application allows for efficient management of courier operations, including package tracking, delivery status updates, and customer support.
+A modern courier service management system backend built with Django REST Framework. Features JWT authentication, role-based access control, and cloud deployment ready.
 
 ## Table of Contents
 - [Features](#features)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
+- [Deployment](#deployment)
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Features
-- Manage courier service operations:
-  - Package tracking
-  - Delivery status updates
-  - Customer support
-- User authentication and authorization
-- RESTful API for interacting with the courier service management system
+- **Core Functionality**
+  - Package tracking with real-time status updates
+  - Delivery management system (Pending/In Transit/Delivered)
+  
+- **Security**
+  - JWT Authentication (Access & Refresh tokens)
+  - Role-based permissions (Admin,regular user )
+  - HasObjectPermission checks for sensitive operations
+- **Data Management**
+  - Soft delete functionality with data preservation
+  - PostgreSQL database support
+- **API Features**
+  - RESTful endpoints using DRF Viewsets and Generics
+  - Detailed permission classes for CRUD operations
+  - Browsable API interface
 
 ## Technology Stack
-- **Python**
-- **Django**: A high-level Python web framework
-- **Django REST Framework**: For building the API
+- **Backend**: Python 3.11+, Django 4.2
+- **API**: Django REST Framework 3.14
+- **Database**: PostgreSQL (Production,Development)
+- **Authentication**: djangorestframework-simplejwt 5.2
+- **Deployment**: Render, Gunicorn 
 
 ## Installation
-To set up the project locally, follow these steps:
+### Local Development
+```bash
+# Clone repository
+git clone https://github.com/TheReinforce43/Couriar_Service_management.git
+cd Couriar_Service_management
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/TheReinforce43/Couriar_Service_management.git
-   cd Couriar_Service_management
-   ```
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-2. **Create a virtual environment**:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
+# Install dependencies
+pip install -r requirements.txt
 
-3. **Install the required packages**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# Configure environment
+cp .env.example .env
+# Edit .env file with your settings
 
-4. **Run database migrations**:
-   ```bash
-   python manage.py migrate
-   ```
+# Run migrations
+python manage.py migrate
 
-5. **Start the development server**:
-   ```bash
-   python manage.py runserver
-   ```
+# Create superuser
+python manage.py createsuperuser
 
-## Usage
-Once the server is running, you can access the API at `http://127.0.0.1:8000/api/`. Use tools like Postman or cURL to interact with the API endpoints.
-
-## API Documentation
-Refer to the [API Documentation](link_to_your_api_documentation) for detailed information on available endpoints and their usage.
-
-## Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/YourFeature`)
-3. Make your changes and commit them (`git commit -m 'Add some feature'`)
-4. Push to the branch (`git push origin feature/YourFeature`)
-5. Open a pull request
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-````
-
-### Instructions
-- Replace `link_to_your_api_documentation` with the actual link to your API documentation if available.
-- Add any additional sections or details specific to your project as needed.
+# Start server
+python manage.py runserver
