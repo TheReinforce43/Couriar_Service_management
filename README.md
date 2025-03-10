@@ -1,6 +1,5 @@
-Here's a structured `README.md` template you can use for the **Couriar_Service_management** project:
 
-````markdown
+
 # Couriar Service Management
 
 Couriar_Service_management is a backend project for a courier service management system built with Python and Django. This application allows for efficient management of courier operations, including package tracking, delivery status updates, and customer support.
