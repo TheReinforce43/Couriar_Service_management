@@ -2,6 +2,7 @@
 
 from rest_framework.generics import CreateAPIView 
 from rest_framework.views import APIView 
+from rest_framework.generics import ListAPIView  
 from rest_framework.response import Response
 from rest_framework import status 
 from rest_framework.permissions import IsAuthenticated
@@ -10,7 +11,8 @@ from user.models import CustomUser
 from user.Serializer.user_serializer import (
     UserLoginSerializer,
     UserLogOutSerializer,
-    UserSignUpSerializer 
+    UserSignUpSerializer ,
+    GetUserSerializer
 )
 
 
@@ -52,4 +54,14 @@ class LogOutAPIView(APIView):
         
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
-    
+
+
+
+# this api used for list API View 
+
+
+class UserListAPIView(ListAPIView):
+
+    queryset = CustomUser.objects.all()
+    serializer_class = GetUserSerializer
+    permission_classes = [IsAuthenticated]

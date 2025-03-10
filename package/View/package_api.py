@@ -71,7 +71,7 @@ class PackageModelViewSet(ModelViewSet):
 
  
     def get_permissions(self):
-        if self.action in  ['create','destroy']:
+        if self.action in  ['create','destroy','update','partial_update']:
             return [IsAdminOrSender(),IsAuthenticated()]
         
         return [IsAuthenticated()]
